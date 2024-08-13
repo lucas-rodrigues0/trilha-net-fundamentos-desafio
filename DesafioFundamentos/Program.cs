@@ -19,6 +19,12 @@ Estacionamento es = new Estacionamento(precoInicial, precoPorHora);
 string opcao = string.Empty;
 bool exibirMenu = true;
 
+void Continuar()
+{
+    Console.WriteLine("Pressione uma tecla para continuar");
+    Console.ReadLine();
+}
+
 // Realiza o loop do menu
 while (exibirMenu)
 {
@@ -33,14 +39,17 @@ while (exibirMenu)
     {
         case "1":
             es.AdicionarVeiculo();
+            Continuar();
             break;
 
         case "2":
             es.RemoverVeiculo();
+            Continuar();
             break;
 
         case "3":
             es.ListarVeiculos();
+            Continuar();
             break;
 
         case "4":
@@ -49,11 +58,9 @@ while (exibirMenu)
 
         default:
             Console.WriteLine("Opção inválida");
+            Continuar();
             break;
     }
-
-    Console.WriteLine("Pressione uma tecla para continuar");
-    Console.ReadLine();
 }
 
 Console.WriteLine("O programa se encerrou");
